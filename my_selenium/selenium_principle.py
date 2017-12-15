@@ -21,7 +21,7 @@ from selenium import webdriver
 logging.basicConfig(level=logging.DEBUG)
 driver = webdriver.Chrome()
 driver.get('https://www.baidu.com')
-driver.find_element_by_id('kw').send_keys('selenium')
+driver.find_element_by_id('kw').send_keys('my_selenium')
 driver.find_element_by_id('su').click()
 driver.close()
 

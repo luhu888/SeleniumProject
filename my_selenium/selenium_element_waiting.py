@@ -16,6 +16,6 @@ from selenium.webdriver.common.by import By
 driver = webdriver.Chrome()
 driver.get('https://wwww.baidu.com')
 element = WebDriverWait(driver, 5, 0.5).until(EC.presence_of_element_located((By.ID, 'kw')))
-element.send_keys('selenium') 
+element.send_keys('my_selenium')
 sleep(2)
 driver.close()

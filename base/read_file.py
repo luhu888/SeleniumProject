@@ -14,7 +14,7 @@ from time import sleep
 import xlrd
 from selenium import webdriver
 
-file_info = open('luhu.txt', 'r')
+file_info = open('base_files/luhu.txt', 'r')
 values = file_info.readlines()
 file_info.close()
 
@@ -60,7 +60,7 @@ def login_txt():
 
 
 def read_csv():
-    my_file = 'test_csv.csv'
+    my_file = 'base_files/test_csv.csv'
     date = csv.reader(file(my_file, 'rb'))
     for user in date:    # 读取到的每一行是一个数组，循环遍历每一行的数组
         print user[0]
@@ -75,7 +75,7 @@ def read_csv():
 
 
 def read_xlsx():
-    data = xlrd.open_workbook('test_info.xlsx')
+    data = xlrd.open_workbook('base_files/test_info.xlsx')
     table = data.sheets()[0]   # 该表的第1个页签
     nrows = table.nrows   # 获取表的行数
     # print nrows
@@ -113,7 +113,7 @@ def read_xlsx():
 
 
 def read_xml():
-    dom = xml.dom.minidom.parse('test_info.xml')    # 打开xml文档
+    dom = xml.dom.minidom.parse('base_files/test_info.xml')    # 打开xml文档
     root = dom.documentElement
     tagname = root.getElementsByTagName('maxid')    # 获取名称为'maxid'标签组
     print tagname[0].tagName                        # 获取该标签组的第一个标签名称

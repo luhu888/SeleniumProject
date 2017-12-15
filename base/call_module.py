@@ -15,7 +15,9 @@
   各个module了，Python中的package必须包含一个__init.py__文件，用来导入需要使用的文件。
 """
 import sys   # 跨目录模块的调用，需在跨目录的模块文件夹中新增一个__init__.py文件，导入你的py文件名
+from my_package import my_add
+
+
 sys.path.append('\package')
-from package import my_add
 print my_add.my_add(4, 5)
 

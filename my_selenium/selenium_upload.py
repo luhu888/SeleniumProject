@@ -35,7 +35,7 @@ from time import sleep
 from selenium import webdriver
 
 driver = webdriver.Chrome()
-file_path = 'file:///' + os.path.abspath('upload.html')
+file_path = 'file:///' + os.path.abspath('selenium_files/upload.html')
 driver.get(file_path)    # 打开手动创建的上传文件界面
 driver.find_element_by_name('file').click()    # 点击选择文件按钮，弹出Window窗口
 os.system("upload_file.exe")     # 执行AutoIt脚本编译后的程序实现上传

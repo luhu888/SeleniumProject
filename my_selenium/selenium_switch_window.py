@@ -27,7 +27,7 @@ for handle in all_handles:
         driver.switch_to.window(search_windows)
         print '回到百度首页！！！'
         driver.find_element_by_id('TANGRAM__PSP_4__closeBtn').click()
-        driver.find_element_by_id('kw').send_keys('selenium')
+        driver.find_element_by_id('kw').send_keys('my_selenium')
         driver.find_element_by_id('su').click()
         sleep(3)
 driver.quit()

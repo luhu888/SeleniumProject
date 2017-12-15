@@ -16,7 +16,7 @@ from selenium import webdriver
 
 driver = webdriver.Chrome()
 driver.get('https://www.baidu.com')
-driver.find_element_by_id('kw').send_keys('selenium')
+driver.find_element_by_id('kw').send_keys('my_selenium')
 driver.find_element_by_id('su').click()
 sleep(4)    # 睡4秒，等拖动条出现后再下拉到底部
 js = 'var q=document.documentElement.scrollTop=10000'     # 距顶端的值为10000个像素，即为下拉操作

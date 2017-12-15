@@ -57,7 +57,7 @@ input1 = driver.find_element_by_id('kww')
 # lambda为匿名函数，:前面定义变量，后面定义函数,每隔一段时间都会调用一下这个匿名函数，
 # 直到函数返回的值为true，或者超时抛出异常
 element = WebDriverWait(driver, 5, 0.5).until(lambda s: input1.is_displayed())
-input1.send_keys('selenium')
+input1.send_keys('my_selenium')
 driver.quit()
 
 # 隐式等待
@@ -71,7 +71,7 @@ driver =webdriver.Chrome()
 driver.implicitly_wait(10)
 driver.get('https://www.baidu.com')
 input2 = driver.find_element_by_id('kww')
-input2.send_keys('selenium')
+input2.send_keys('my_selenium')
 driver.quit()
 
 

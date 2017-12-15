@@ -29,13 +29,13 @@ count = Calculate()
 print count.my_add(2, 5)
 
 
-class My_Calculate(Calculate):    # My_Calculate继承Calculate类，所以可以使用Calculate里的方法
+class MyCalculate(Calculate):    # My_Calculate继承Calculate类，所以可以使用Calculate里的方法
     @staticmethod
     def my_sub(a, b):
         return a-b
 
 
-count2 = My_Calculate()
+count2 = MyCalculate()
 print count2.my_sub(7, 9)
 print count2.my_add(7, 6)
 

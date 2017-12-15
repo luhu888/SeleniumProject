@@ -10,7 +10,7 @@ from selenium import webdriver
 driver = webdriver.Chrome()
 driver.get('https://www.baidu.com')
 try:
-    driver.find_element_by_id('kw_error').send_keys('selenium')
+    driver.find_element_by_id('kw_error').send_keys('my_selenium')
     driver.find_element_by_id('su').click()
 except:
     driver.get_screenshot_as_file('picture/error.jpg')   # 报存到该脚本同级目录对应的picture文件夹中

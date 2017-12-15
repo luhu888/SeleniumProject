@@ -31,7 +31,7 @@ try:
     print '设置浏览器宽高为480,800'
     # driver.maximize_window()
     driver.set_window_size(480, 800)  # 默认全屏执行可以使用maximize_window()方法，或使用set_window_size()方法不传值
-    driver.find_element_by_id('kw').send_keys("selenium")
+    driver.find_element_by_id('kw').send_keys("my_selenium")
     driver.find_element_by_id('su').click()
 # except ElementNotVisibleException:
 #     print '抛出异常！！！'
