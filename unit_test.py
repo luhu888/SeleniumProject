@@ -49,7 +49,7 @@ class TestCount(unittest.TestCase):    # 让所有执行测试的类都继承于
 class TestEqual(unittest.TestCase):
     def setUp(self):
         print '相等测试开始，请输入一个数字：'
-        number = input()
+        number = raw_input()
         self.number = number
 
     def test_equal(self):
@@ -58,6 +58,7 @@ class TestEqual(unittest.TestCase):
 
     def tearDown(self):
         print '相等测试结束！！！'
+
 
 """
         首先调用unittest 所提供的TestSuite()类，通过它下面的addTtest()方法来添加TestCount 类下面的
