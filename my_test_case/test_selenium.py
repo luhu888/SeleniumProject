@@ -1,23 +1,25 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-import unittest
+import unittest, time, re
 
 
-class TestCase(unittest.TestCase):
+class TestSelenium(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
-        self.base_url = "https://www.baidu.com/"
+        self.driver.implicitly_wait(30)
+        self.base_url = "http://blog.csdn.net/"
         self.verificationErrors = []
         self.accept_next_alert = True
     
-    def test_case(self):
+    def test_selenium(self):
         driver = self.driver
-        # 打开百度
-        driver.get(self.base_url)
-        driver.find_element_by_id("kw").send_keys('selenium3')
-        driver.find_element_by_id("su").click()
+        driver.get(self.base_url + "/972301/article/details/62238451")
+        self.assertEqual(u"Python+Selenium3最新配置 - CSDN博客", driver.title)
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
@@ -25,13 +27,13 @@ class TestCase(unittest.TestCase):
         return True
     
     def is_alert_present(self):
-        try: self.driver.switch_to.alert()
+        try: self.driver.switch_to_alert()
         except NoAlertPresentException as e: return False
         return True
     
     def close_alert_and_get_its_text(self):
         try:
-            alert = self.driver.switch_to.alert()
+            alert = self.driver.switch_to_alert()
             alert_text = alert.text
             if self.accept_next_alert:
                 alert.accept()
