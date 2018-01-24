@@ -19,5 +19,5 @@ from my_package import my_add
 
 
 sys.path.append('\package')
-print my_add.my_add(4, 5)
+print(my_add.my_add(4, 5))
 

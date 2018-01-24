@@ -28,16 +28,15 @@
 try:
     open('luhu.txt.txt', 'r')
 except IOError:    # 捕捉异常
-    print '出异常了！！！'
-
+    print('出异常了！！！')
 
 try:      # 更多的异常用法，与else结合使用
     test = '异常测试！！！'
-    print test
-except Exception, msg:
-    print msg     # 打印报错信息
+    print(test)
+except Exception as msg:
+    print(msg)     # 打印报错信息
 else:
-    print '没有异常！！！'
+    print('没有异常！！！')
 
 
 

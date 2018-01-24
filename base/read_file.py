@@ -63,10 +63,10 @@ def read_csv():
     my_file = 'base_files/test_csv.csv'
     date = csv.reader(file(my_file, 'rb'))
     for user in date:    # 读取到的每一行是一个数组，循环遍历每一行的数组
-        print user[0]
-        print user[1]
+        print(user[0])
+        print(user[1])
         for element in user:   # 循环遍历每一行数组中的元素
-            print element
+            print(element)
 
 
 """
@@ -85,7 +85,7 @@ def read_xlsx():
         age = table.cell_value(i, 1)
         email = table.cell_value(i, 2)
         tel = table.cell_value(i, 3)
-        print username, int(age), email, int(tel)    # 没有强转成int类型，获得的数据会是小数
+        print(username, int(age), email, int(tel))  # 没有强转成int类型，获得的数据会是小数
 
 
 """
@@ -116,13 +116,13 @@ def read_xml():
     dom = xml.dom.minidom.parse('base_files/test_info.xml')    # 打开xml文档
     root = dom.documentElement
     tagname = root.getElementsByTagName('maxid')    # 获取名称为'maxid'标签组
-    print tagname[0].tagName                        # 获取该标签组的第一个标签名称
+    print(tagname[0].tagName)  # 获取该标签组的第一个标签名称
     items = root.getElementsByTagName('item')    # 获取标签组名称
     id_value = items[0].getAttribute("id")           # 获取该标签组中第一个标签id属性对应的值
-    print id_value
+    print(id_value)
     captions = root.getElementsByTagName('caption')    # 获取名称为captions的标签组
-    print captions[0].firstChild.data                  # 获取该标签组中第一个节点对应的数据
-    print captions[2].firstChild.data                  # 获取该标签组中第三个节点对应的数据
+    print(captions[0].firstChild.data)  # 获取该标签组中第一个节点对应的数据
+    print(captions[2].firstChild.data)  # 获取该标签组中第三个节点对应的数据
 
 
 if __name__ == '__main__':

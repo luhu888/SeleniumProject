@@ -12,8 +12,8 @@ def my_add2(a=3, b=4):       # 如果调用函数不传参数，可以设置参�
     return a+b
 
 
-print my_add2()
-print my_add2(2, 4)
+print(my_add2())
+print(my_add2(2, 4))
 
 
 class Calculate:
@@ -26,7 +26,7 @@ class Calculate:
 
 
 count = Calculate()
-print count.my_add(2, 5)
+print(count.my_add(2, 5))
 
 
 class MyCalculate(Calculate):    # My_Calculate继承Calculate类，所以可以使用Calculate里的方法
@@ -36,8 +36,8 @@ class MyCalculate(Calculate):    # My_Calculate继承Calculate类，所以可以
 
 
 count2 = MyCalculate()
-print count2.my_sub(7, 9)
-print count2.my_add(7, 6)
+print(count2.my_sub(7, 9))
+print(count2.my_add(7, 6))
 
 
 

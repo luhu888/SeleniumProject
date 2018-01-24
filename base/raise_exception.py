@@ -5,6 +5,8 @@
     样的信息与NameError之间没有什么关系，但我们可以使用raise自定义一些异常信息，这看上去比print更专业，
     需要注意的是raise只能使用Python中所提供的异常类，自定义的异常类不起作用。
 """
+from pip._vendor.distlib.compat import raw_input
+
 filename = raw_input('please input file name:')
 if filename == 'hello':
     raise NameError('input file name error!')
