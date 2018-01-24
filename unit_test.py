@@ -2,6 +2,8 @@
 # __author__=luhu
 import unittest
 
+from pip._vendor.distlib.compat import raw_input
+
 from my_package.count import Count  # 从本地count.py文件中导入Count类
 
 """
@@ -28,16 +30,16 @@ from my_package.count import Count  # 从本地count.py文件中导入Count类
 
 class TestCount(unittest.TestCase):    # 让所有执行测试的类都继承于TestCase类
     def setUp(self):     # 在setUp()方法中进行测试前的初始化工作
-        print '加法测试开始'
+        print('加法测试开始')
         self.j = Count(2, 3)
 
     def test_add(self):
         self.add = self.j.add()
         self.assertEqual(self.add, 5)   # 断言，对Count类中add()方法返回值与预期值比较
-        print '加法测试中。。。。'
+        print('加法测试中。。。。')
 
     def tearDown(self):  # 在tearDown()方法中执行测试后的清除工作，没有可清理的工作就传一个pass
-        print '加法测试结束'
+        print('加法测试结束')
 
 
 """
@@ -48,16 +50,16 @@ class TestCount(unittest.TestCase):    # 让所有执行测试的类都继承于
 
 class TestEqual(unittest.TestCase):
     def setUp(self):
-        print '相等测试开始，请输入一个数字：'
+        print('相等测试开始，请输入一个数字：')
         number = raw_input()
         self.number = number
 
     def test_equal(self):
-        print '相等测试中。。。'
+        print('相等测试中。。。')
         self.assertEqual(self.number, 10, msg='你输入的是%s,不是10！！！' % self.number)
 
     def tearDown(self):
-        print '相等测试结束！！！'
+        print('相等测试结束！！！')
 
 
 """

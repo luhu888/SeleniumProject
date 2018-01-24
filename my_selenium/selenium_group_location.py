@@ -29,9 +29,9 @@ sleep(2)
 driver.find_element_by_xpath('//*[@id="homePage"]/div[1]/div[2]/div[4]/div').click()
 inputs = driver.find_elements_by_xpath('//div')
 driver.find_elements_by_xpath('//div').pop().click()   # pop()函数用于获取列表中的一个元素
-print len(inputs)                                      # (默认为最后一个元素)，pop(2)默认获取一组中的第三个
+print(len(inputs))  # (默认为最后一个元素)，pop(2)默认获取一组中的第三个
 for i in inputs:
     i.click()
-    print len(i)
+    print(len(i))
 sleep(6)
 driver.close()

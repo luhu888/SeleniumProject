@@ -205,13 +205,13 @@ str = "www.runoob.com"
 print(str.isalnum())
 
 """
-isalpha() 方法检测字符串是否只由字母组成。
-语法
-str.isalpha()
-参数
-无。
-返回值
-如果字符串至少有一个字符并且所有字符都是字母则返回 True,否则返回 False
+    isalpha() 方法检测字符串是否只由字母组成。
+    语法
+    str.isalpha()
+    参数
+    无。
+    返回值
+    如果字符串至少有一个字符并且所有字符都是字母则返回 True,否则返回 False
 """
 str = "runoob"
 print(isalpha(str))
@@ -219,13 +219,13 @@ str = "Runoob example....wow!!!"
 print(str.isalpha())
 
 """
-isdigit() 方法检测字符串是否只由数字组成。
-语法
-str.isdigit()
-参数
-无。
-返回值
-如果字符串只包含数字则返回 True 否则返回 False。
+    isdigit() 方法检测字符串是否只由数字组成。
+    语法
+    str.isdigit()
+    参数
+    无。
+    返回值
+    如果字符串只包含数字则返回 True 否则返回 False。
 """
 str = "123456"
 print(str.isdigit())
