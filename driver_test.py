@@ -20,7 +20,7 @@ def create_suite1():      # 构造自定义测试用例集1,定义test_case文�
     for test_suite in discover:
         for test_case in test_suite:
             test_unit.addTests(test_case)
-            print test_unit
+            print(test_unit)
     return test_unit
 
 

@@ -22,7 +22,7 @@ iframe = driver.find_element_by_xpath('//*[@class="iframe-box ng-scope"]')
 driver.switch_to.frame(iframe)
 driver.find_element_by_xpath('//*[@id="searchDiv"]/div[2]/button').click()
 # inputs = driver.find_elements_by_css_selector('//*/div/div/div')
-# print len(inputs)                 # 完成在当前表单的操作后，通过该方法返回到上一层表单，该方法不用指定某个表单
+# print(len(inputs))                 # 完成在当前表单的操作后，通过该方法返回到上一层表单，该方法不用指定某个表单
 driver.switch_to.default_content()  # 的返回，默认对应与他最近的switch_to_frame()方法
 
 

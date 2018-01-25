@@ -21,11 +21,11 @@ all_handles = driver .window_handles   # 获取当前所有打开的窗口句柄
 for handle in all_handles:
     if handle != search_windows:  # 如果当前界面不是百度首页
         driver.switch_to.window(handle)  # 就跳转到另一个界面，就是注册界面
-        print '现在在注册界面！！！'
+        print('现在在注册界面！！！')
         driver.find_element_by_name('userName').send_keys(u'自动输入用户名')  # 对中文进行Unicode编码
         driver.find_element_by_name('phone').send_keys('15856691310')
         driver.switch_to.window(search_windows)
-        print '回到百度首页！！！'
+        print('回到百度首页！！！')
         driver.find_element_by_id('TANGRAM__PSP_4__closeBtn').click()
         driver.find_element_by_id('kw').send_keys('my_selenium')
         driver.find_element_by_id('su').click()

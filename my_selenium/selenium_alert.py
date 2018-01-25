@@ -22,7 +22,7 @@ ActionChains(driver).move_to_element(link).perform()
 driver.find_element_by_class_name('setpref').click()
 sleep(3)
 driver.find_element_by_class_name('prefpanelgo').click()
-driver.switch_to_alert().accept()
+driver.switch_to.alert().accept()
 driver.close()
 
 

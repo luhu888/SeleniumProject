@@ -24,19 +24,19 @@ driver.get('https://www.baidu.com')
 
 # 获取输入框的尺寸
 size = driver.find_element_by_id('kw').size
-print size
+print(size)
 
 # 返回百度首页的备案信息
 text = driver.find_element_by_id('cp').text
-print text
+print(text)
 
 # 返回元素的属性对应的值，可以是id，name，type或元素拥有的其他任意属性
 my_attribute = driver.find_element_by_id('kw').get_attribute('name')
-print my_attribute
+print(my_attribute)
 
 # 返回元素的结果是否可见
 result = driver.find_element_by_id('kw').is_displayed()
-print result
+print(result)
 
 sleep(5)
 
