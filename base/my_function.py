@@ -118,13 +118,34 @@ def outer():
         i_count = 2  # 局部作用域
 
 
+if True:
+    msg = 'I am from Runoob'      # 实例中 msg 变量定义在 if 语句块中，但外部还是可以访问的。
+print(msg)                       # 如果将 msg 定义在函数中，则它就是局部变量，外部不能访问
 
 
+def test():
+    if True:
+        msg = 'I am from Runoob'
 
 
+try:
+    print(msg)
+except NameError:
+    print('msg 定义在函数中，它就是局部变量，外部不能访问')
 
 
+total = 0    # 这是一个全局变量
 
+
+def my_sum2(arg1, arg2):
+    total = arg1 + arg2    # total在这里是局部变量.
+    print("函数内是局部变量 : ", total)
+    return total
+
+
+# 调用sum函数
+my_sum2(10, 20)
+print("函数外是全局变量 : ", total)
 
 
 
@@ -144,9 +165,10 @@ if __name__ == '__main__':
     # print("sum匿名函数相加后的值为 : ", sum(10, 20))
     # print("sum匿名函数相加后的值为 : ", sum(20, 20))
     # 调用sum函数
-    total = my_sum(10, 20)
-    print("函数外 : ", total)
-
+    # total = my_sum(10, 20)
+    # print("函数外 : ", total)
+    my_sum2(10, 20)
+    print("函数外是全局变量 : ", total)
 
 
 
