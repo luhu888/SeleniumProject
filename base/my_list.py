@@ -339,25 +339,28 @@ def compare_identical_with_copy():
     print(id(c))
 
 
-if __name__ == '__main__':
-    compare_identical_with_copy()
-    list_update_and_del()
-    list_nested()
-    list_len()
-    list_max()
-    list_min()
-    list_list()
-    list_append()
-    list_count()
-    list_extend()
-    list_index()
-    list_insert()
-    list_pop()
-    list_remove()
-    list_reverse()
-    list_sort()
-    list_clear()
-    list_copy()
+vec = [2, 4, 6]
+a = [3*x for x in vec]      # 列表推导式
+print(a)
+# if __name__ == '__main__':
+    # compare_identical_with_copy()
+    # list_update_and_del()
+    # list_nested()
+    # list_len()
+    # list_max()
+    # list_min()
+    # list_list()
+    # list_append()
+    # list_count()
+    # list_extend()
+    # list_index()
+    # list_insert()
+    # list_pop()
+    # list_remove()
+    # list_reverse()
+    # list_sort()
+    # list_clear()
+    # list_copy()
 
 
 

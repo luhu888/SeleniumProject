@@ -15,6 +15,8 @@
     函数内容以冒号起始，并且缩进。
     return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 None。
 """
+import builtins
+
 a = [1, 2, 3]
 a = "Runoob"
 """
@@ -82,7 +84,7 @@ def print_info2(arg1, *vartuple):    # 不定长参数实例
     虽然lambda函数看起来只能写一行，却不等同于C或C++的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率。
 """
 
-sum = lambda arg1, arg2: arg1 + arg2     # 匿名函数实例
+sum = lambda arg1=9, arg2=8: arg1 + arg2     # 匿名函数实例,也可以设置默认参数和关键字参数
 
 
 """
@@ -107,7 +109,8 @@ def my_sum(arg1, arg2):
     B （Built-in） 内建作用域
     以 L –> E –> G –>B 的规则查找，即：在局部找不到，便会去局部外的局部找（例如闭包），再找不到就会去全局找，再者去内建中找。
 """
-x = int(2.9)  # 内建作用域
+# -----------------------------------------
+y = int(2.9)  # 内建作用域
 g_count = 0  # 全局作用域
 
 
@@ -116,8 +119,57 @@ def outer():
 
     def inner():
         i_count = 2  # 局部作用域
+# -----------------------------------------
 
 
+# -----------------------------------------
+x = int(3.3)
+x = 0
+# -----------------------------------------
+
+
+def outer1():                 # 局
+    x = 1                     # 部
+
+    def inner1():             # 作
+        x = 2                 # 用
+        print(x)              # 域
+    inner1()
+
+
+def outer2():                 # 闭
+    x = 1                     # 包
+
+    def inner2():             # 函
+        i = 2                 # 数，不同之处在这
+        print(x)              # 外
+    inner2()                  # 的函数中
+
+
+def outer3():                # 全
+    o = 1                    # 局，不同之处在这
+
+    def inner3():            # 作
+        i = 2                # 用
+        print(x)             # 域
+    inner3()
+
+
+def outer4():               # 内
+    o = 1                   # 建
+
+    def inner4():           # 作, 将全局变量x=0变为g=0,这样他才会去访问内建变量，x=int(3.3)
+        i = 2               # 用
+        print(x)            # 域
+    inner4()
+
+
+outer1()     # 局部作用域，执行结果为 2，因为此时直接在函数 inner 内部找到了变量 x
+outer2()     # 闭包函数外的函数中，执行结果为 1，因为在内部函数 inner 中找不到变量 x，继续去局部外的局部——函数 outer 中找
+outer3()     # 全局作用域，执行结果为 0，在局部（inner函数）、局部的局部（outer函数）都没找到变量 x，于是访问全局变量，此时找到了并输出。
+outer4()     # 内建作用域,执行结果为 3，在局部（inner函数）、局部的局部（outer函数）以及全局变量中都没有找到变量x，于是访问内建变量，此时找到了并输出。
+
+# ----------------------------------------------
 if True:
     msg = 'I am from Runoob'      # 实例中 msg 变量定义在 if 语句块中，但外部还是可以访问的。
 print(msg)                       # 如果将 msg 定义在函数中，则它就是局部变量，外部不能访问
@@ -143,14 +195,38 @@ def my_sum2(arg1, arg2):
     return total
 
 
-# 调用sum函数
+# 调用my_sum2函数
 my_sum2(10, 20)
 print("函数外是全局变量 : ", total)
 
 
+"""
+    当内部作用域想修改外部作用域的变量时，就要用到global和nonlocal关键字了
+"""
+num = 1
 
 
+def fun1():
+    global num  # 需要使用 global 关键字声明
+    print(num)
+    num = 123
+    print(num)
 
+
+# 如果要修改嵌套作用域（enclosing 作用域，外层非全局作用域）中的变量则需要 nonlocal 关键字了
+def my_outer():
+    num = 10
+
+    def my_inner():
+        nonlocal num   # nonlocal关键字声明
+        num = 100
+        print(num)
+    my_inner()
+    print(num)
+
+
+def function_translate_dictionary(country, province, **kwargs):   # 把N个关键字参数转化为字典
+    print(country, province, kwargs)
 
 
 if __name__ == '__main__':
@@ -162,15 +238,21 @@ if __name__ == '__main__':
     # print_info2(10)
     # print_info2(70, 60, 50)
     # # 调用sum匿名函数
-    # print("sum匿名函数相加后的值为 : ", sum(10, 20))
+    print("sum匿名函数相加后的值为 : ", sum())
     # print("sum匿名函数相加后的值为 : ", sum(20, 20))
     # 调用sum函数
     # total = my_sum(10, 20)
     # print("函数外 : ", total)
-    my_sum2(10, 20)
-    print("函数外是全局变量 : ", total)
-
-
+    # my_sum2(10, 20)
+    # print("函数外是全局变量 : ", total)
+    # fun1()
+    # my_outer()
+    function_translate_dictionary("China", "Sichuan", city="Chengdu", section="JingJiang")
+    for i in dir(builtins):print(i)
+"""
+    内置作用域是通过一个名为builtin的标准模块来实现的，但是这个变量名自身并没有放入内置作用域内，
+    所以必须导入这个文件才能够使用它。在Python3.0中，可以使用以下的代码来查看到底预定义了哪些变量
+"""
 
 
 
