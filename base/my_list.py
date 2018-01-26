@@ -10,6 +10,9 @@
     列表是最常用的Python数据类型，它可以作为一个方括号内的逗号分隔值出现。
     列表的数据项不需要具有相同的类型
 """
+from collections import deque
+
+
 def list_update_and_del():
     list1 = ['Google', 'Runoob', 1997, 2000]
     list2 = [1, 2, 3, 4, 5, 6, 7]
@@ -339,10 +342,28 @@ def compare_identical_with_copy():
     print(id(c))
 
 
-vec = [2, 4, 6]
-a = [3*x for x in vec]      # 列表推导式
-print(a)
-# if __name__ == '__main__':
+def list_comprehension():       # 列表推导式
+    vec = [2, 4, 6]
+    a = [3*x for x in vec]
+    print(a)
+
+
+def list_queue():        # append添加在列表尾部，popleft取出最左边的值
+    queue = deque(["Eric", "John", "Michael"])       # 双向队列
+    queue.append("Terry")
+    queue.append("Graham")  # Graham arrives
+    queue.popleft()
+    print(queue)
+
+
+def nested_list_parse():       # 嵌套列表解析
+    matrix = [[1, 2,  3,  4],     # row 行
+              [5, 6,  7,  8],     # 将3X4的矩阵列表转换为4X3列表
+              [9, 10, 11, 12]]    # for row in matrix表示该嵌套list的子list的个数，再遍历子list中的元素
+    print(list(list(row[i] for row in matrix) for i in range(4)))
+
+
+if __name__ == '__main__':
     # compare_identical_with_copy()
     # list_update_and_del()
     # list_nested()
@@ -361,8 +382,8 @@ print(a)
     # list_sort()
     # list_clear()
     # list_copy()
-
-
+    # list_queue()
+    nested_list_parse()
 
 
 

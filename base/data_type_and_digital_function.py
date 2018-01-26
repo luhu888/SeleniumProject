@@ -6,13 +6,14 @@ from math import ceil, exp, fabs, floor, log
 import math
 from random import choice, randrange, random, shuffle, uniform, randint, sample
 
-a = 12
-b = 23.123
+a = 12     # int
+b = 23.123    # float
 c = -45
 d = 100
-e = (1, 2, 4, 5, 45, 46, 40)
-f = [20, 16, 10, 5]
-g = 'abcdefghijklmnopq'
+e = (1, 2, 4, 5, 45, 46, 40)      # tuple
+f = [20, 16, 10, 5]               # list
+g = 'abcdefghijklmnopq'           # string
+h = {'Name': 'luhu', 'age': 22, 'phone': '15856691310'}       # dictionary
 print(float(a))     # 不支持复数转换为整数或浮点数
 
 h = 8+5j
@@ -51,7 +52,7 @@ list = sample(g, 4)    # 可以从指定的序列中，随机的截取指定长�
 strs = ''.join(list)
 print(strs)
 
-num=10
+num = 10
 print('十六进制：%#x' % num)    # 使用%x将十进制num格式化为十六进制
 print('二进制:', bin(num))      # 使用bin将十进制num格式化为二进制
 print('八进制：%#o' % num)      # 使用%o将十进制num格式化为八进制

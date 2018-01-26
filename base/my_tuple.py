@@ -109,49 +109,6 @@ def tuple_alter2():
     print(a)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     # tuple_delete()
     # tuple_alter()
