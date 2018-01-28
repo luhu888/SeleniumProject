@@ -283,8 +283,8 @@ if __name__ == '__main__':
     # dictionary_delete()
     # dictionary_speciality1()
     # dictionary_speciality2()
-    # dictionary_items()
-    dictionary_popitems()
+    dictionary_items()
+    # dictionary_popitems()
 
 
 
