@@ -26,7 +26,7 @@
                 SyntaxError              Python代码逻辑语法出错，不能执行
 """
 try:
-    open('luhu.txt.txt', 'r')
+    open('luhu.txt', 'r')
 except IOError:    # 捕捉异常
     print('出异常了！！！')
 
@@ -37,7 +37,8 @@ except Exception as msg:
     print(msg)     # 打印报错信息
 else:
     print('没有异常！！！')
-
+finally:
+    print('无论是否有异常，我都执行！！！')
 
 
 
