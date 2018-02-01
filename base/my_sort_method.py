@@ -3,7 +3,6 @@
 import math
 
 lst = [1, 13, 4, 6, 7, 22, 9, 0, 2, 5, 11, 3, 14]
-
 lst3 = [3.3, 1.2, 0, 1.8, 1, 2.4, 3, 5, 2, 4, 6, 7, 9, 8, 10, 11, 14, 55, 89, 112]
 # ----------------------------------------------------------------------------------------------------------------------
 """
@@ -50,7 +49,7 @@ def bubble_sort(lists):           # 冒泡排序
 """
 
 
-def quick_sort(lists, left, right):
+def quick_sort(lists, left, right):    # 前提是lists为一个左边数据小于右边数据的list，left值为0，right值为len(lists)-1
     # 快速排序
     if left >= right:
         return lists
@@ -218,7 +217,7 @@ def shell_sort(lists):
 if __name__ == '__main__':
     print(insert_sort(lst3))
     print(bubble_sort(lst3))
-    # print(quick_sort(lst3, 0, 10))      # 不准确
+    print(quick_sort(lst3, 0, len(lst3)-1))
     print(heap_sort(lst3))
     print(merge_sort(lst3))
     print(radix_sort(lst3))
