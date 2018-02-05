@@ -177,7 +177,8 @@ if __name__ == '__main__':
     # my_exchange1()
     # my_asc2_character()
     # print(my_gcd())
-    print(my_lcm())
+    # print(my_lcm())
+    my_calendar()
 
 
 
