@@ -28,4 +28,4 @@ typename varchar(255)
 );
 insert into type(typename) values('普通文章'),('金华文章'),('原创文章'),('草稿');
 SELECT article.aid,article.title,user.username,type.typename FROM article RIGHT
- JOIN user ON article.uid=user.uid left JOIN type ON article.tid=type.tid;  -- 对于 MySQL 多表 JOIN，还可以 INNER、LEFT 和 RIGHT 混用，其返回结果与各关键字顺序有关
+ JOIN user ON article.uid=user.uid LEFT JOIN type ON article.tid=type.tid;  -- 对于 MySQL 多表 JOIN，还可以 INNER、LEFT 和 RIGHT 混用，其返回结果与各关键字顺序有关

@@ -19,7 +19,7 @@ class MySQLConnect(object):
         cursor = database.cursor()  # 使用cursor()方法获取操作游标
         cursor.execute(my_command)   # 使用execute方法执行SQL语句
         data = cursor.fetchone()    # 使用fetchone()方法获取一条数据
-        print('数据库的版本号为：%s' %data)
+        print('数据库的版本号为：%s' % data)
 
         database.close()      # 关闭数据库
 
@@ -74,5 +74,5 @@ if __name__ == '__main__':
         my_sql.test_mysql_exe(my_command=sql1)
         my_sql.test_mysql_exe(my_command=sql2)
     except pymysql.err.ProgrammingError:
-        print('程序错误，例如数据表（table）没找到或已存在、SQL语句语法错误、'
+        print('程序错误，例如数据表（table）没找到或已存在、SQL语句语法错误'
               ' 参数数量错误等等。必须是DatabaseError的子类。')
