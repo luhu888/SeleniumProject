@@ -11,4 +11,5 @@ driver.find_element_by_name("user").send_keys("15856691310")
 driver.find_element_by_name("password").clear()
 driver.find_element_by_name("password").send_keys("luhu199515lbh", Keys.ENTER)
 # ERROR: Caught exception [Error: Dom locators are not implemented yet!]
-print driver.find_element_by_css_selector("#homePage > div.topmenu > div.topmenu-badge > ul > li.pull-left.user_name").text
+print(driver.find_element_by_css_selector(
+    "#homePage > div.topmenu > div.topmenu-badge > ul > li.pull-left.user_name").text)

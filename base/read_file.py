@@ -61,7 +61,7 @@ def login_txt():
 
 def read_csv():
     my_file = 'base_files/test_csv.csv'
-    date = csv.reader(file(my_file, 'rb'))
+    date = csv.reader(open(my_file, 'rb'))
     for user in date:    # 读取到的每一行是一个数组，循环遍历每一行的数组
         print(user[0])
         print(user[1])

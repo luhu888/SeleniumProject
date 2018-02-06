@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>            <!--XML 声明文件的可选部分，如果存在需要放在文档的第一行-->
 <catalog>
     <maxid>4</maxid>
     <login username="pytest" passwd="123456">
@@ -7,7 +7,51 @@
             <caption>test</caption>
         </item>
     </login>
-    <item id="2">
+    <item id="2">         <!--XML 属性值必须加引号-->
         <caption>Zope</caption>
     </item>
 </catalog>
+<!--XML 标签对大小写敏感-->
+<!--实体引用-->
+<!--在 XML 中，一些字符拥有特殊的意义。-->
+<!--如果您把字符 "<" 放在 XML 元素中，会发生错误，这是因为解析器会把它当作新元素的开始。-->
+<!--为了避免这个错误，请用实体引用来代替 "<" 字符,在 XML 中，有 5 个预定义的实体引用-->
+<!--&lt;	<	less than-->
+<!--&gt;	>	greater than-->
+<!--&amp;	&	ampersand-->
+<!--&apos;	'	apostrophe-->
+<!--&quot;	"	quotation mark-->
+<!--在 XML 中，多个空格会被保留-->
+<!--XML 以 LF 存储换行-->
+<!--在 Windows 应用程序中，换行通常以一对字符来存储：回车符（CR）和换行符（LF）。-->
+<!--在 Unix 和 Mac OSX 中，使用 LF 来存储新行。-->
+<!--在旧的 Mac 系统中，使用 CR 来存储新行。-->
+<!--XML 以 LF 存储换行。-->
+
+<!--XML 元素必须遵循以下命名规则：
+    名称可以包含字母、数字以及其他的字符
+    名称不能以数字或者标点符号开始
+    名称不能以字母 xml（或者 XML、Xml 等等）开始
+    名称不能包含空格
+    可使用任何名称，没有保留的字词。-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
