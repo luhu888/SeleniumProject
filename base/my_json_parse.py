@@ -65,16 +65,26 @@ def my_json_to_data():
     print("data2['name']: ", data2['name'])
     print("data2['url']: ", data2['url'])
 
+
 # 如果你要处理的是文件而不是字符串，你可以使用 json.dump() 和 json.load() 来编码和解码JSON数据
+# 写入数据
+def my_write_json():
+    with open('base_files/data3.json', 'w') as f:
+        json.dump(data, f)
 
-
-with open('base_files/data.json', 'w') as f:
-    json.dump(data, f)
 
 # 读取数据
-with open('base_files/data.json', 'r') as f:
-    data = json.load(f)
+def my_read_json():
+    try:
+        with open('base_files/data4.json', 'r') as f:
+            data = json.load(f)
+        print(data)
+    except FileNotFoundError:
+        print('该文件不存在！！！')
+
 
 if __name__ == '__main__':
-    my_dic_to_json()
-    my_json_to_data()
+    # my_dic_to_json()
+    # my_json_to_data()
+    # my_write_json()
+    my_read_json()
