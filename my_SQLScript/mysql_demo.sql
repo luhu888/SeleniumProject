@@ -1,19 +1,19 @@
 use test_tb1;
 show tables;
 create table log (aid int auto_increment,site_id int,count int,date date,primary key(aid));
-
+# 子句（clause） SQL语句由子句构成，有些子句是必需的，而有的是可选的。一个子句通常由一个关键字和所提供的数据组成。子句的例子有SELECT语句的FROM子句
 select * from log;
 
-select* from websites;
+select* from website;
 
 select id from websites; --  从数据表中选定指定的列
 
-select distinct country from websites; --  返回该列唯一不同的值
+select distinct name,country from website; --  返回该列唯一不同的值,过滤相同country的行
 
 select * from websites where country='CN'; -- 返回country值为CN的记录
 
 select * from websites where id>1 and id <5; -- 返回id大于1，小于5的记录
-
+              # sql语句不区分大小写，但like查询搜索区分大小写
 select * from websites where country like '%A'; -- 模糊查询country中以A结尾的记录,%表示多个字符,_下划线表示一个字符
 
 select * from websites where country like '%U__'; -- 模糊查询country倒数第三位字母是U的记录
@@ -49,9 +49,9 @@ select count(distinct site_id) from log; -- 返回指定列的不同值的数目
 select count(*) from log; -- 返回表中总记录数
 
 select name as FirstName from websites limit 1; -- 显示websites 表中name列的第一个值并命名为FirstName
-
+select name as FirstName from website limit 2 OFFSET 5;   # 从行2开始选5行，不足5行就显示剩下所有的条数
 select name as LastName from websites order by name desc limit 1; -- 显示websites表name列中倒数第一的记录
-
+select * from website where alexa  not IN (1,11) ORDER BY alexa DESC;   # in的功能和or类似，但可读性更强
 select max(alexa) as max_alexa from websites; -- 选取websites表alexa列的最大值显示并命名为max_alexa
 
 select min(alexa) as min_alexa from websites; -- 选取websites表alexa列的最小值显示并命名为min_alexa
