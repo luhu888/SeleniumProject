@@ -35,3 +35,5 @@ class D(B, C):
 if __name__ == '__main__':
     d = D()
     d.foo()
+    a = A()
+    a.foo()
