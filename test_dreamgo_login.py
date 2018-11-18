@@ -21,9 +21,9 @@ class TestDreamgoLogin(unittest.TestCase):
         driver.get(self.base_url + "/test_dreamgo/app/#/homepage")
         driver.implicitly_wait(10)
         driver.find_element_by_name("user").clear()
-        driver.find_element_by_name("user").send_keys("15856691310")
+        driver.find_element_by_name("user").send_keys("1234567")
         driver.find_element_by_name("password").clear()
-        driver.find_element_by_name("password").send_keys("luhu199515lbh", Keys.ENTER)
+        driver.find_element_by_name("password").send_keys("123456", Keys.ENTER)
         # ERROR: Caught exception [Error: Dom locators are not implemented yet!]
         response = driver.find_element_by_class_name("ng-binding").text
         self.assertEqual(u'卢虎', response)

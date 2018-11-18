@@ -7,9 +7,9 @@ driver = webdriver.Chrome()
 driver.get('http://192.168.1.102/test_dreamgo/app/#/homepage')
 driver.implicitly_wait(10)
 driver.find_element_by_name("user").clear()
-driver.find_element_by_name("user").send_keys("15856691310")
+driver.find_element_by_name("user").send_keys("343333")
 driver.find_element_by_name("password").clear()
-driver.find_element_by_name("password").send_keys("luhu199515lbh", Keys.ENTER)
+driver.find_element_by_name("password").send_keys("123444", Keys.ENTER)
 # ERROR: Caught exception [Error: Dom locators are not implemented yet!]
 print(driver.find_element_by_css_selector(
     "#homePage > div.topmenu > div.topmenu-badge > ul > li.pull-left.user_name").text)

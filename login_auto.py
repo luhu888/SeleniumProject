@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 
 driver = webdriver.Chrome()
-driver.get('http://www.jstjjg.com/manage/')
+driver.get('http://www.baidu.com')
 driver.implicitly_wait(10)
 
 """
@@ -50,7 +50,7 @@ def logout():
     driver.close()
 
 
-admin = Account(username='portal', password='portal123')
+admin = Account(username='3334', password='123456')
 login_as(admin)
 sleep(3)
 logout()
